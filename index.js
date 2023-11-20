@@ -10,7 +10,7 @@ const{mongoose}=require('./database')
 app.use(morgan('dev'))
 app.use(cors())
 
-app.set('port',5000)
+app.set('port',5001)
 
 const contenedorRotes=require('./routes/route.contenedor')
 const pedidosRoutes=require('./routes/route.pedido')
@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '10000000mb'}));
 app.use(express.static('./lib/views/'));
 app.use(express.json())
 
-app.use('/conte',contenedorRotes)
+app.use('/contenedor',contenedorRotes)
 app.use('/pedido',pedidosRoutes)
 app.use('/cliente',clienteRoutes)
 app.use('/negocio',negocioRoutes)
